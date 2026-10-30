@@ -138,7 +138,7 @@ def build(d):
   <p>It then names the idea (tokenisation), shows what it is used for (property, loans, bonds and investment funds), and ends on where Redbelly comes from: research at the University of Sydney and CSIRO, and a place as one of three platforms that carried the Reserve Bank of Australia's pilot digital money in Project Acacia.</p>
   <h3 style="margin-top:6mm">What is in the submission</h3>
   <table class="files"><tbody>{files_html}</tbody></table>
-  <p class="muted" style="margin-top:4mm">All files are in the <code>submission/</code> folder of the repository. The companion website, <code>site/index.html</code>, plays the video and carries the same material.</p>
+  <p class="muted" style="margin-top:4mm">All files are in the <code>submission/</code> folder of the repository. The companion website, <code>index.html</code> at the repository root, plays the video and carries the same material.</p>
 </div>
 
 <div class="sec">

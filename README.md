@@ -4,9 +4,9 @@
 
 A 88 second video that explains what Redbelly does and why it matters, in everyday language, for someone who has never touched crypto. It is an entry for the Redbelly DAO Community Task Board task that asks for Redbelly to be explained to a friend, a parent or a business owner, without the one technical word the task rules out.
 
-**Watch:** [`submission/redbelly-in-simple-terms.mp4`](submission/redbelly-in-simple-terms.mp4) &nbsp; **Read:** [`submission/redbelly-in-simple-terms-submission.pdf`](submission/redbelly-in-simple-terms-submission.pdf) &nbsp; **Browse:** [`site/index.html`](site/index.html)
+**Watch:** [`submission/redbelly-in-simple-terms.mp4`](submission/redbelly-in-simple-terms.mp4) &nbsp; **Read:** [`submission/redbelly-in-simple-terms-submission.pdf`](submission/redbelly-in-simple-terms-submission.pdf) &nbsp; **Browse:** [`index.html`](index.html)
 
-> **Before judging.** The brief fails any entry that is posted publicly before the DAO announces the result. Keep this repository private, and leave GitHub Pages off, until judging is complete.
+> **Before judging.** The brief fails any entry that is posted publicly before the DAO announces the result. Keep this repository private, and keep any Vercel or GitHub Pages deployment unshared or password protected, until judging is complete.
 
 ## The idea
 
@@ -35,7 +35,7 @@ Also included, to make the entry easy to judge and to reuse:
 | File | What it is |
 |---|---|
 | [`redbelly-in-simple-terms-submission.pdf`](submission/redbelly-in-simple-terms-submission.pdf) | Submission document: the entry, script, storyboard, fact check, checks and production notes |
-| [`site/index.html`](site/index.html) | Companion website with the player, script, storyboard and fact check |
+| [`index.html`](index.html) | Companion website with the player, script, storyboard and fact check. Served from the repository root, so it works on Vercel or GitHub Pages with no settings |
 | [`transcript.txt`](submission/transcript.txt) | The narration as plain text |
 | [`verification-report.md`](submission/verification-report.md) | Output of the automated checks |
 
@@ -155,7 +155,8 @@ bash src/build.sh --voice
 
 ```text
 submission/            the deliverables: video, captions, sources, PDF, transcript, check report
-site/                  companion website (open site/index.html)
+index.html             companion website (open it directly, or deploy the repository root)
+site/img/              images used by the website and the PDF
 src/script.json        the narration, caption breaks and the facts each line uses
 src/facts.json         the fact sheet: every claim, source and quote
 src/audio/             voice generation, music and sound synthesis, mix and master

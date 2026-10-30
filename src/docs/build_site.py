@@ -1,4 +1,6 @@
-"""Build the companion website (site/index.html) and submission/sources.md.
+"""Build the companion website (index.html at the repository root, images in site/img)
+and submission/sources.md. Serving the page from the root means it works as is on
+Vercel, GitHub Pages or any static host, and opened straight from disk.
 
 The site follows the Redbelly DAO Task Board brand kit: dark slate by default with a
 light theme, one red accent, Be Vietnam Pro for words, JetBrains Mono for machine values.
@@ -42,7 +44,7 @@ def images(d):
     for i, t in enumerate(storyboard_times(d["tl"]), 1):
         src = stills / f"t_{t:06.2f}.png"
         png(src, IMG / f"scene-{i:02d}.png", 960)
-        out.append(f"img/scene-{i:02d}.png")
+        out.append(f"site/img/scene-{i:02d}.png")
     poster = stills / f"t_{d['poster_t']:06.2f}.png"
     png(poster, IMG / "poster.png", 1280)
     og = Image.open(stills / f"t_{d['og_t']:06.2f}.png").convert("RGB")
@@ -215,7 +217,7 @@ def page(d, scenes):
              ("submission/sources.md", "The source list with every quote"),
              ("submission/transcript.txt", "The narration as plain text"),
              ("submission/verification-report.md", "Output of the automated checks")]
-    files_html = "".join(f'<tr><td><a href="../{p}">{p.split("/")[-1]}</a></td><td>{escape(t)}</td></tr>' for p, t in files)
+    files_html = "".join(f'<tr><td><a href="{p}">{p.split("/")[-1]}</a></td><td>{escape(t)}</td></tr>' for p, t in files)
 
     meta = (f'<span><b>{secs} s</b> long</span><span><b>{pr.get("w", 1920)} x {pr.get("h", 1080)}</b></span><span><b>{pr.get("fps", 30)} fps</b></span>'
             f'<span><b>H.264</b> + AAC</span><span>Captions <b>burned in</b> + SRT</span><span><b>{d["words"]}</b> words</span>')
@@ -229,18 +231,18 @@ def page(d, scenes):
 <meta name="description" content="A {secs} second video that explains what Redbelly does and why it matters, in everyday language.">
 <meta property="og:title" content="Redbelly in Simple Terms">
 <meta property="og:description" content="What Redbelly does and why it matters, in {secs} seconds of everyday language.">
-<meta property="og:image" content="img/og.png">
+<meta property="og:image" content="site/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
-<link rel="icon" href="img/dao-logo-on-dark.png">
-<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="icon" href="site/img/dao-logo-on-dark.png">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
 <style>{CSS}</style>
 <script>try{{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <img class="logo-dark" src="img/dao-logo-on-dark.png" alt="Redbelly DAO" width="56" height="40">
-  <img class="logo-light" src="img/dao-logo-on-light.png" alt="Redbelly DAO" width="56" height="40">
+  <img class="logo-dark" src="site/img/dao-logo-on-dark.png" alt="Redbelly DAO" width="56" height="40">
+  <img class="logo-light" src="site/img/dao-logo-on-light.png" alt="Redbelly DAO" width="56" height="40">
   <nav><a href="#watch">Watch</a><a href="#idea">The idea</a><a href="#script">Script</a><a href="#storyboard">Storyboard</a><a href="#facts">Facts</a><a href="#checks">Checks</a><a href="#files">Files</a></nav>
   <button class="theme" id="theme" aria-label="Switch between light and dark theme">{icon("sun-moon", 18)}</button>
 </div></header>
@@ -251,12 +253,12 @@ def page(d, scenes):
     <h1>Redbelly in Simple Terms</h1>
     <p class="lead">A {secs} second video that explains what Redbelly does and why it matters, for someone who has never touched crypto. It never uses the word the task rules out, or any stand-in for it.</p>
   </div>
-  <div class="player"><video controls preload="metadata" poster="img/poster.png" src="../submission/{NAME}.mp4"></video></div>
+  <div class="player"><video controls preload="metadata" poster="site/img/poster.png" src="submission/{NAME}.mp4"></video></div>
   <div class="meta">{meta}</div>
   <div class="btns">
-    <a class="btn primary" href="../submission/{NAME}.mp4" download>{icon("file-check-2", 18)}Download video</a>
-    <a class="btn ghost" href="../submission/{NAME}-submission.pdf">{icon("file-text", 18)}Submission PDF</a>
-    <a class="btn ghost" href="../submission/{NAME}.srt" download>{icon("scroll-text", 18)}Captions</a>
+    <a class="btn primary" href="submission/{NAME}.mp4" download>{icon("file-check-2", 18)}Download video</a>
+    <a class="btn ghost" href="submission/{NAME}-submission.pdf">{icon("file-text", 18)}Submission PDF</a>
+    <a class="btn ghost" href="submission/{NAME}.srt" download>{icon("scroll-text", 18)}Captions</a>
   </div>
 </div></div>
 
@@ -325,10 +327,9 @@ def main():
     d["poster_t"] = round(tl["cues"]["onestep.together"] + 0.55, 2)
     d["og_t"] = round(tl["duration"] - 1.0, 2)
     scenes = images(d)
-    SITE.mkdir(exist_ok=True)
-    (SITE / "index.html").write_text(page(d, scenes))
+    (ROOT / "index.html").write_text(page(d, scenes))
     sources_md(d)
-    print("site/index.html and submission/sources.md written")
+    print("index.html and submission/sources.md written")
 
 
 if __name__ == "__main__":

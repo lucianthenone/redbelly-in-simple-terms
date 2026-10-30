@@ -153,7 +153,7 @@ def main():
         hits = [h for h in scan(t, FILLER) if not rel.startswith("src/checks")]
         if hits:
             bad_f.append(f"{rel}: {', '.join(sorted(set(hits)))}")
-        if rel.startswith(("submission", "site")) and scan(visible(p, t), CREDIT):
+        if rel.startswith(("submission", "site", "index.html")) and scan(visible(p, t), CREDIT):
             bad_c.append(f"{rel}: {', '.join(scan(visible(p, t), CREDIT))}")
     pdf = SUB / f"{NAME}-submission.pdf"
     pt = pdf_text(pdf) if pdf.exists() else ""
@@ -202,7 +202,7 @@ def main():
 
     # 4. Deliverables and video specification
     print("\n== Deliverables ==")
-    for p in [VIDEO, SUB / f"{NAME}.srt", SUB / f"{NAME}.vtt", SUB / "sources.md", pdf, ROOT / "site/index.html"]:
+    for p in [VIDEO, SUB / f"{NAME}.srt", SUB / f"{NAME}.vtt", SUB / "sources.md", pdf, ROOT / "index.html"]:
         check(f"{p.relative_to(ROOT)} exists", p.exists() and p.stat().st_size > 0)
     if VIDEO.exists():
         pr = json.loads(subprocess.run(["ffprobe", "-v", "error", "-show_streams", "-show_format", "-of", "json", str(VIDEO)],
