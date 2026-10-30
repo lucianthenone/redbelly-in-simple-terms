@@ -242,6 +242,7 @@ def main():
         # Whisper spells the American way and splits the name; the sounds are the same.
         def spoken(x):
             x = norm(x).replace("red belly", "redbelly").replace("c s i r o", "csiro")
+            x = re.sub(r"\btoo\b", "two", x)  # same sound, so the transcript may spell either
             return re.sub(r"(\w)iz(ation|e|ed)\b", r"\1is\2", x).replace("trialed", "trialled").split()
         heard_n, want_n = spoken(heard), spoken(entry_texts["narration script"])
         import difflib

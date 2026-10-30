@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Rebuilds every deliverable from source.
 #   bash src/build.sh            reuse the chosen narration takes in build/voice if present
-#   bash src/build.sh --voice    regenerate the narration too (slow on CPU, about 1 hour)
+#   bash src/build.sh --voice    regenerate the narration too (a few minutes on a CPU)
 # Any other arguments go to the final check, for example: bash src/build.sh --online --asr
-# Needs: Python 3.12+ with requirements.txt, Node 18+ with Playwright and Chromium, ffmpeg with librubberband.
+# Needs: Python 3.12+ with requirements.txt, Node 18+ with Playwright and Chromium, and ffmpeg.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 PY=${PYTHON:-python3}
@@ -14,8 +14,8 @@ step() { printf '\n== %s\n' "$1"; }
 VOICE=0
 if [[ "${1:-}" == "--voice" ]]; then VOICE=1; shift; fi
 if [[ $VOICE == 1 || ! -f build/voice/manifest.json ]]; then
-  step "Narration: 4 takes per line, transcribed, best exact take kept"
-  $PY src/audio/voice.py --takes 4
+  step "Narration: Kokoro, 3 takes per line, transcribed, best exact take kept"
+  $PY src/audio/voice.py
 fi
 
 step "Timeline: pace, word timings, cues, captions"

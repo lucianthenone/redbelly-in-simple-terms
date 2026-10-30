@@ -2,7 +2,7 @@
 
 [![Redbelly in Simple Terms, frame from the video](site/img/poster.png)](submission/redbelly-in-simple-terms.mp4)
 
-A 88 second video that explains what Redbelly does and why it matters, in everyday language, for someone who has never touched crypto. It is an entry for the Redbelly DAO Community Task Board task that asks for Redbelly to be explained to a friend, a parent or a business owner, without the one technical word the task rules out.
+An 87 second video that explains what Redbelly does and why it matters, in everyday language, for someone who has never touched crypto. It is an entry for the Redbelly DAO Community Task Board task that asks for Redbelly to be explained to a friend, a parent or a business owner, without the one technical word the task rules out.
 
 **Watch:** [`submission/redbelly-in-simple-terms.mp4`](submission/redbelly-in-simple-terms.mp4) &nbsp; **Read:** [`submission/redbelly-in-simple-terms-submission.pdf`](submission/redbelly-in-simple-terms-submission.pdf) &nbsp; **Browse:** [`index.html`](index.html)
 
@@ -26,7 +26,7 @@ Everything the brief asks for is in [`submission/`](submission).
 
 | Required by the brief | File | Notes |
 |---|---|---|
-| One entry: a video of up to 90 seconds, 1080p or higher, MP4 | [`redbelly-in-simple-terms.mp4`](submission/redbelly-in-simple-terms.mp4) | 88 s, 1920 x 1080, 60 fps, H.264 and AAC, 15.9 MB, mastered to -14 LUFS |
+| One entry: a video of up to 90 seconds, 1080p or higher, MP4 | [`redbelly-in-simple-terms.mp4`](submission/redbelly-in-simple-terms.mp4) | 87 s, 1920 x 1080, 60 fps, H.264 and AAC, 15.7 MB, mastered to -14 LUFS |
 | Subtitles, burned in or as a separate file | Burned in, and [`.srt`](submission/redbelly-in-simple-terms.srt) + [`.vtt`](submission/redbelly-in-simple-terms.vtt) | Both. The SRT is the format X accepts for uploaded captions |
 | A short list of the sources used for any facts | [`sources.md`](submission/sources.md) | 12 public sources, every quote copied from the page |
 
@@ -115,7 +115,7 @@ The first command runs the offline checks: language rules on the entry and the w
 
 ```mermaid
 flowchart LR
-  A[src/script.json<br/>script and fact tags] --> B[voice.py<br/>4 takes per line<br/>Whisper keeps exact takes]
+  A[src/script.json<br/>script and fact tags] --> B[voice.py<br/>Kokoro, 3 takes per line<br/>Whisper keeps exact takes]
   B --> C[timeline.py<br/>pace, word timings,<br/>cues, captions]
   C --> D[music.py<br/>score and sound<br/>synthesised in code]
   C --> E[stage.html + stage.js<br/>8 scenes, frame by frame]
@@ -128,18 +128,14 @@ flowchart LR
   I --> J
 ```
 
-- **Voice.** Chatterbox Turbo by Resemble AI, open weights under the MIT licence, with its built-in voice. Four takes per line; each is transcribed with Whisper and only takes that match the script word for word can be chosen. The chosen takes are slowed by 5 percent with Rubber Band, formants preserved, for an easy pace.
+- **Voice.** Kokoro 82M v1.0 by hexgrad, open weights under the Apache 2.0 licence, voice Bella (`af_bella`). It was chosen from 20 voices in a side by side listening test, and only voices with a licence that allows this use were in the running. Each line is generated at three speeds; each take is transcribed with Whisper and only takes that match the script word for word can be chosen. The voice runs at its natural pace.
 - **Music and sound.** An original score at 96 BPM, synthesised from oscillators and noise in [`src/audio/music.py`](src/audio/music.py), with the groove landing on the Redbelly reveal. The sound effects are made the same way. The music ducks under the voice.
 - **Picture.** Eight HTML and SVG scenes in [`src/video/`](src/video), styled with the DAO Task Board tokens. Each frame is a pure function of time, so frames render in parallel and always match the audio. Every animation and sound effect is anchored to the word that triggers it.
 - **Brand.** Follows the [Redbelly DAO Task Board brand kit](https://taskboard.redbellydao.network/brand): slate surfaces, one red accent (`#EF5350`), Be Vietnam Pro for words, JetBrains Mono only for machine values, status shown as a dot plus a mono label, and the voice rules (no em or en dashes, no emoji, no filler verbs), which the checker enforces. The Redbelly logo is used unaltered from the [official brand kit](https://redbelly.network/brand).
 
 ## Rebuild from source
 
-Requirements: Python 3.12 or newer, Node 18 or newer with Playwright and Chromium, and ffmpeg built with librubberband.
-
-```bash
-pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-```
+Requirements: Python 3.12 or newer, Node 18 or newer with Playwright and Chromium, and ffmpeg.
 
 ```bash
 pip install -r requirements.txt
@@ -149,7 +145,7 @@ pip install -r requirements.txt
 bash src/build.sh --voice
 ```
 
-`bash src/build.sh` without `--voice` reuses the chosen takes in `build/voice/` and rebuilds everything else: timeline, music, mix, picture, encode, captions, site, PDF and checks. Generating the voice takes about an hour on a 4 core CPU; rendering and encoding the picture takes about 8 minutes.
+`bash src/build.sh` without `--voice` reuses the chosen takes in `build/voice/` and rebuilds everything else: timeline, music, mix, picture, encode, captions, site, PDF and checks. Generating the voice takes a few minutes on a 4 core CPU (the Kokoro model, about 350 MB, downloads to `build/models/` on the first run); rendering and encoding the picture takes about 8 minutes.
 
 ## Repository layout
 

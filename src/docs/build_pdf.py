@@ -179,7 +179,7 @@ def build(d):
   <p>Everything is built from source in the repository, so every frame and every sound can be rebuilt and inspected.</p>
   <table><tbody>{prod}</tbody></table>
   <h3 style="margin-top:6mm">Licences</h3>
-  <p>No stock footage, photos, music or samples. The voice model is MIT licensed. Music and sound effects are synthesised in code for this entry. Be Vietnam Pro and JetBrains Mono are under the SIL Open Font License. Icons are Lucide, under the ISC licence. The Redbelly and Redbelly DAO logos come unaltered from the official brand kits. Full details are in <code>CREDITS.md</code>.</p>
+  <p>No stock footage, photos, music or samples. The voice model, Kokoro, is under the Apache 2.0 licence. Music and sound effects are synthesised in code for this entry. Be Vietnam Pro and JetBrains Mono are under the SIL Open Font License. Icons are Lucide, under the ISC licence. The Redbelly and Redbelly DAO logos come unaltered from the official brand kits. Full details are in <code>CREDITS.md</code>.</p>
 </div>
 </body></html>
 """

@@ -83,7 +83,7 @@ FAILURES = [
 
 PRODUCTION = [
     ("Script", "21 lines in src/script.json, each tagged with the facts it relies on. Written to be read aloud: one idea per sentence."),
-    ("Voice", "Chatterbox Turbo, an open-weights voice model under the MIT licence, with its built-in voice. Four takes of every line. Each take is transcribed with Whisper and only takes that match the script word for word can be chosen. The chosen takes are slowed by 5 percent with Rubber Band, formants preserved, for an easy pace."),
+    ("Voice", "Kokoro 82M v1.0, an open-weights voice model under the Apache 2.0 licence, with its voice Bella (af_bella), chosen from 20 voices in a side by side listening test. Each line is generated at three speeds, each take is transcribed with Whisper, and only takes that match the script word for word can be chosen. The voice runs at its natural pace, with no time stretch."),
     ("Music and sound", "Composed in code in src/audio/music.py: warm pads, a plucked arpeggio, bass and light percussion at 96 BPM. The groove lands on the Redbelly reveal. Sound effects are synthesised the same way. The music ducks under the voice and the mix is mastered to -14 LUFS."),
     ("Picture", "Eight HTML and SVG scenes in the DAO Task Board palette and type. Each frame is a pure function of time, rendered in Chromium at 1920 x 1080 and 60 frames per second, then encoded with x264."),
     ("Timing", "Every animation and sound effect is anchored to a spoken word, using Whisper word timings, so the picture moves when the voice says the word."),

@@ -1,8 +1,8 @@
 """Build the master timeline that the audio mix, the renderer and the captions share.
 
-1. Takes the chosen narration takes from build/voice/, slows them gently with
-   Rubber Band (formant preserved) for a relaxed, easy to follow pace, and
-   resamples to 48 kHz.
+1. Takes the chosen narration takes from build/voice/ and resamples them to
+   48 kHz. TEMPO can slow a voice with Rubber Band (formant preserved); the
+   Kokoro voice is used at its natural pace, so it is left at 1.0.
 2. Lays the lines out on the clock using the pauses in src/script.json.
 3. Gets word timings with Whisper and aligns them to the script words.
 4. Resolves every animation and sound cue to a time, anchored on spoken words,
@@ -22,7 +22,7 @@ import soundfile as sf
 
 ROOT = Path(__file__).resolve().parents[1]
 SR = 48000
-TEMPO = 0.95          # 5 percent slower than the raw take
+TEMPO = 1.0           # 1.0 keeps the voice at its natural pace
 INTRO = 0.6           # seconds of picture before the first word
 SCENE_LEAD = 0.45     # a scene starts this long before its first line
 ENDCARD_HOLD = 3.4    # end card length after the last line
@@ -149,7 +149,8 @@ def tokens(text):
 def stretch(src, dst):
     subprocess.run([
         "ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
-        "-af", f"aresample=48000:resampler=soxr,rubberband=tempo={TEMPO}:formant=preserved:pitchq=quality:window=standard",
+        "-af", "aresample=48000:resampler=soxr" + ("" if TEMPO == 1.0 else
+               f",rubberband=tempo={TEMPO}:formant=preserved:pitchq=quality:window=standard"),
         "-ac", "1", "-c:a", "pcm_f32le", str(dst)], check=True)
 
 

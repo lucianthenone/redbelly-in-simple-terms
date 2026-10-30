@@ -2,7 +2,8 @@
 
 Targets: narration stem -16 LUFS, music bed sits about 11 LU under the voice
 and ducks a further 5 dB while someone is speaking. Final master -14 LUFS
-integrated, true peak below -1 dBTP (two pass EBU R128 in ffmpeg).
+integrated, true peak limited to -1.5 dBTP so it stays below -1 dBTP after AAC
+encoding (two pass EBU R128 in ffmpeg).
 
 Writes build/audio/narration.wav, build/audio/mix.wav, build/audio/final.wav
 """
@@ -91,11 +92,11 @@ def main():
 
     # two pass loudness normalisation
     p = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(out / "mix.wav"), "-af",
-                        "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json", "-f", "null", "-"],
+                        "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"],
                        capture_output=True, text=True)
     js = p.stderr[p.stderr.rindex("{"):p.stderr.rindex("}") + 1]
     m = json.loads(js)
-    af = ("loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={input_i}:measured_TP={input_tp}:"
+    af = ("loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={input_i}:measured_TP={input_tp}:"
           "measured_LRA={input_lra}:measured_thresh={input_thresh}:offset={target_offset}:linear=true").format(**m)
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(out / "mix.wav"), "-af", af,
                     "-ar", "48000", "-c:a", "pcm_s24le", str(out / "final.wav")], check=True)

@@ -1,8 +1,5 @@
-# Python 3.12 or newer. On a machine without a GPU, install the CPU build of torch first:
-#   pip install torch==2.6.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu
-torch==2.6.0
-torchaudio==2.6.0
-chatterbox-tts==0.1.7
+# Python 3.12 or newer. No GPU needed.
+kokoro-onnx==0.6.1
 faster-whisper==1.2.1
 librosa==0.11.0
 soundfile==0.14.0

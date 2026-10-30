@@ -345,6 +345,8 @@
 
       const tStep = C["onestep.step"] + 0.15;
       const tFail = C["onestep.fail"], tNo = C["onestep.nothing"], tFin = C["onestep.final"];
+      // the last swap starts on "Once" so the FINAL stamp lands on the word "final"
+      const tOnce = TL.lines.find((l) => l.id === "L08").start;
       const reset = tFail - 0.3;
       let k, cx, dxx, fx = 0, fo = 0;
       let doneA = t >= tStep && t < reset, failed = false, finalDone = t >= tFin;
@@ -354,7 +356,7 @@
         tf(coin, { x: cx, y: 560 - 90 * Math.sin(Math.PI * k), o: vis, s: 1 }); coin.style.left = "0px"; coin.style.top = "0px";
         tf(deed, { x: dxx, y: 560 + 90 * Math.sin(Math.PI * k), o: vis, s: 1 }); deed.style.left = "0px"; deed.style.top = "0px";
         setRing(doneA ? "ok" : "idle");
-      } else if (t < tFin - 0.05) {
+      } else if (t < tOnce) {
         // a failed attempt: the money starts, the asset side fails, everything returns
         const back = p(t, tNo, 0.55, E.inOut);
         const go = p(t, tFail, 0.45, E.out) * (1 - back);
@@ -362,23 +364,23 @@
         tf(coin, { x: lerp(620, 800, go), y: 560 - 40 * Math.sin(Math.PI * go * 0.5), o: fadeIn });
         tf(deed, { x: 1300, y: 560, o: fadeIn });
         failed = t >= tFail + 0.2;
-        fo = p(t, tFail + 0.2, 0.25, E.back) * (1 - p(t, tFin - 0.35, 0.25));
+        fo = p(t, tFail + 0.2, 0.25, E.back) * (1 - p(t, tOnce - 0.3, 0.25));
         tf(failX, { x: 1340, y: 515, o: fo, s: lerp(0.4, 1, fo) });
         setRing(failed ? "bad" : "idle");
       } else {
-        k = p(t, tFin - 0.05, 0.55, E.inOut);
+        k = p(t, tOnce, Math.max(0.5, tFin - tOnce - 0.05), E.inOut);
         tf(coin, { x: lerp(620, 1300, k), y: 560 - 90 * Math.sin(Math.PI * k), o: 1 - 0.0 * k });
         tf(deed, { x: lerp(1300, 620, k), y: 560 + 90 * Math.sin(Math.PI * k), o: 1 });
         setRing(k > 0.98 ? "ok" : "idle");
       }
       if (t >= tFail - 0.3) tf(failX, { x: 1340, y: 515, o: fo, s: lerp(0.4, 1, fo) }); else tf(failX, { o: 0 });
-      hasB.textContent = (doneA || t >= tFin + 0.4) ? "Owns the asset" : "Has the money";
-      hasS.textContent = (doneA || t >= tFin + 0.4) ? "Has the money" : "Has the asset";
+      hasB.textContent = (doneA || t >= tFin) ? "Owns the asset" : "Has the money";
+      hasS.textContent = (doneA || t >= tFin) ? "Has the money" : "Has the asset";
       tf(okTxt, { o: doneA ? p(t, tStep, 0.25) * (1 - p(t, reset - 0.2, 0.2)) : 0, y: 0 });
-      tf(failTxt, { o: failed ? p(t, tFail + 0.2, 0.25) * (1 - p(t, tFin - 0.3, 0.2)) : 0 });
-      tf(finalTxt, { o: finalDone ? p(t, tFin + 0.45, 0.3) : 0 });
-      const sk = p(t, tFin + 0.45, 0.4, E.back);
-      tf(stamp, { o: t >= tFin + 0.45 ? p(t, tFin + 0.45, 0.15) : 0, s: lerp(1.6, 1, sk), r: lerp(-14, -5, sk) });
+      tf(failTxt, { o: failed ? p(t, tFail + 0.2, 0.25) * (1 - p(t, tOnce - 0.2, 0.2)) : 0 });
+      tf(finalTxt, { o: finalDone ? p(t, tFin, 0.3) : 0 });
+      const sk = p(t, tFin, 0.4, E.back);
+      tf(stamp, { o: t >= tFin ? p(t, tFin, 0.15) : 0, s: lerp(1.6, 1, sk), r: lerp(-14, -5, sk) });
     };
   });
 

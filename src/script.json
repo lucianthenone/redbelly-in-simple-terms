@@ -128,7 +128,7 @@
     {
       "id": "L08",
       "scene": "onestep",
-      "pause_after": 0.75,
+      "pause_after": 0.95,
       "facts": [
         "F08"
       ],
@@ -150,7 +150,6 @@
         "F10"
       ],
       "text": "The people trading are verified, a bit like showing ID at a bank, and their private details stay protected.",
-      "tts": "The people trading are verified, a bit like showing I.D. at a bank, and their private details stay protected.",
       "captions": [
         "The people trading are verified,",
         "a bit like showing ID at a bank,",

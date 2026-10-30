@@ -4,7 +4,7 @@ Everything in the video and on the companion site is either original to this ent
 
 | Element | What it is | Source | Licence |
 |---|---|---|---|
-| Narration | Synthetic voice, generated line by line from the script | Chatterbox Turbo by Resemble AI, built-in voice, open weights ([model card](https://huggingface.co/ResembleAI/chatterbox-turbo)) | MIT (code and weights). Chatterbox adds an inaudible Perth watermark that marks the audio as synthetic. |
+| Narration | Synthetic voice, generated line by line from the script | Kokoro 82M v1.0 by hexgrad, voice Bella (`af_bella`), open weights ([model card](https://huggingface.co/hexgrad/Kokoro-82M)), run with kokoro-onnx | Apache 2.0 (weights and voices). kokoro-onnx is MIT. The espeak-ng phonemizer it calls is GPL-3.0; it is used as a tool and its licence does not cover the audio it helps produce. |
 | Speech check | Every narration take is transcribed to confirm it says the script exactly | faster-whisper with Whisper `medium.en` | MIT |
 | Music | Original score: pads, plucked arpeggio, bass and light percussion | Synthesised from oscillators and noise in `src/audio/music.py` | Original to this entry |
 | Sound effects | Whooshes, ticks, chimes, the lock and the "blocked" sound | Synthesised in `src/audio/music.py` | Original to this entry |
