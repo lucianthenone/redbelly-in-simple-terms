@@ -52,6 +52,7 @@ def images(d):
     og.quantize(colors=256, dither=Image.Dither.FLOYDSTEINBERG).save(IMG / "og.png", optimize=True)
     shutil.copy(ROOT / "assets/brand/dao-logo-on-dark.png", IMG / "dao-logo-on-dark.png")
     shutil.copy(ROOT / "assets/brand/dao-logo-on-light.png", IMG / "dao-logo-on-light.png")
+    shutil.copy(ROOT / "assets/brand/icon.png", IMG / "icon.png")  # square favicon from the DAO kit
     return out
 
 
@@ -234,7 +235,7 @@ def page(d, scenes):
 <meta property="og:image" content="site/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex">
-<link rel="icon" href="site/img/dao-logo-on-dark.png">
+<link rel="icon" type="image/png" sizes="512x512" href="site/img/icon.png">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
 <style>{CSS}</style>
 <script>try{{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
