@@ -1,0 +1,6 @@
+# Intermediate render output, rebuilt by src/build.sh
+build/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
