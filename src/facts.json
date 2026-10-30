@@ -1,0 +1,128 @@
+{
+  "last_verified": "2026-10-30",
+  "note": "Every statement in the video that describes Redbelly is listed here with the public source it comes from. Quotes are copied from the source; an ellipsis marks words left out. Context lines (C) are everyday comparisons, not claims about Redbelly.",
+  "sources": {
+    "S1": { "title": "Home page", "publisher": "Redbelly Network", "url": "https://redbelly.network", "accessed": "2026-10-30" },
+    "S2": { "title": "Asset Tokenisation", "publisher": "Redbelly Network", "url": "https://redbelly.network/asset-tokenisation", "accessed": "2026-10-30" },
+    "S3": { "title": "Project Acacia", "publisher": "Redbelly Network", "url": "https://redbelly.network/projectacacia", "accessed": "2026-10-30" },
+    "S4": { "title": "Our Technology", "publisher": "Tokeniser (a Redbelly Network project)", "url": "https://tokeniser.com/technology", "accessed": "2026-10-30" },
+    "S5": { "title": "Instant settlement", "publisher": "Tokeniser (a Redbelly Network project)", "url": "https://tokeniser.com/product/superpowers/instant-settlement", "accessed": "2026-10-30" },
+    "S6": { "title": "Automated compliance", "publisher": "Tokeniser (a Redbelly Network project)", "url": "https://tokeniser.com/product/superpowers/automated-compliance", "accessed": "2026-10-30" },
+    "S7": { "title": "About Us", "publisher": "Tokeniser (a Redbelly Network project)", "url": "https://tokeniser.com/about", "accessed": "2026-10-30" },
+    "S8": { "title": "Tokenised asset-backed security transaction pilot launches under Project Acacia (11 December 2025)", "publisher": "Redbelly Network blog", "url": "https://redbelly.network/blog/tokenised-asset-backed-security-transaction-pilot-launches-under-Project-Acacia", "accessed": "2026-10-30" },
+    "S9": { "title": "Project Acacia: Exploring the Role of Digital Money in Wholesale Tokenised Asset Markets, Final Report (May 2026)", "publisher": "Reserve Bank of Australia and Digital Finance CRC", "url": "https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf", "accessed": "2026-10-30" },
+    "S10": { "title": "Media Release 2026-13: RBA and DFCRC Release Findings From Project Acacia (18 May 2026)", "publisher": "Reserve Bank of Australia", "url": "https://www.rba.gov.au/media-releases/2026/mr-26-13.html", "accessed": "2026-10-30" },
+    "S11": { "title": "About Us (Redbelly journey timeline)", "publisher": "Redbelly Network", "url": "https://redbelly.network/about-us", "accessed": "2026-10-30" },
+    "S12": { "title": "What Sets Redbelly Network Apart (30 October 2024)", "publisher": "Redbelly Network blog", "url": "https://redbelly.network/blog/what-sets-redbelly-network-apart", "accessed": "2026-10-30" }
+  },
+  "facts": [
+    { "id": "F01", "kind": "context",
+      "claim": "You can send a photo around the world in a second.",
+      "check": "Everyday comparison to set up the contrast. Not a claim about Redbelly.",
+      "evidence": [] },
+    { "id": "F02", "kind": "context",
+      "claim": "Buying into a fund can still take two business days to settle.",
+      "check": "Today's typical settlement window for listed funds, as described by Tokeniser.",
+      "evidence": [
+        { "source": "S5", "quote": "Every subscription, redemption and transfer remains unsettled for two business days in listed funds, and often longer in private assets." } ] },
+    { "id": "F03", "kind": "context",
+      "claim": "The money and the record of who owns what sit in different places, and the copies have to be checked against each other.",
+      "check": "How settlement works today: cash and ownership records move separately and must be reconciled.",
+      "evidence": [
+        { "source": "S5", "quote": "Today, cash and units move separately, and records are updated days later." },
+        { "source": "S5", "quote": "When the trade and the register update together, reconciliation is no longer required and settlement breaks are reduced." },
+        { "source": "S8", "quote": "The intricate payment waterfalls, inter-system reconciliations, and multi-party dependencies have traditionally limited transparency and liquidity." } ] },
+    { "id": "F04", "kind": "redbelly",
+      "claim": "Redbelly is a public network.",
+      "check": "Described as public by Tokeniser and as public in the RBA report.",
+      "evidence": [
+        { "source": "S4", "quote": "Is Redbelly a private network? No. Redbelly is a public network ..." },
+        { "source": "S9", "page": "p. 12", "quote": "Pilot use cases were conducted on a range of public and private ... platforms, including ... Redbelly Network (public) ..." } ] },
+    { "id": "F05", "kind": "redbelly",
+      "claim": "Redbelly was built in Australia and grew out of research at the University of Sydney and CSIRO, Australia's national science agency.",
+      "check": "Origin stated by Redbelly and Tokeniser; joint venture listed in Redbelly's own timeline.",
+      "evidence": [
+        { "source": "S3", "quote": "Developed at the University of Sydney and CSIRO, Redbelly Network's homegrown ..." },
+        { "source": "S4", "quote": "Redbelly was born from research at the University of Sydney and CSIRO, Australia's government science agency, with a patented consensus method built from scratch." },
+        { "source": "S7", "quote": "CSIRO ... Australia's national science agency worked alongside that research to take it from published papers to a network that institutions can run in production, under Australian governance." },
+        { "source": "S11", "quote": "Block8, CSIRO and University of Sydney create Redbelly Network as a joint venture with seed funding" } ] },
+    { "id": "F06", "kind": "redbelly",
+      "claim": "Redbelly brings the money and the ownership records together in one place.",
+      "check": "Redbelly describes its design as joining payments and asset records into a single system, which reduces reconciliation.",
+      "evidence": [
+        { "source": "S8", "quote": "Its deterministic consensus unifies payments and asset ... into a single system, reducing reconciliation and enabling collateral mobility." },
+        { "source": "S1", "quote": "Establish digital registries as a shared source of truth across issuers, managers, and investors." } ] },
+    { "id": "F07", "kind": "redbelly",
+      "claim": "Payment and ownership move in one step. If either side fails, nothing moves.",
+      "check": "Tokeniser, which runs on Redbelly, exchanges cash and units in a single step or not at all.",
+      "evidence": [
+        { "source": "S5", "quote": "On Tokeniser, cash and units are exchanged in a single step and the register updates simultaneously, or the transaction does not proceed." },
+        { "source": "S4", "quote": "Tokeniser gives you a familiar platform. Underneath it runs Redbelly Network ..." } ] },
+    { "id": "F08", "kind": "redbelly",
+      "claim": "Once it's done, it's final.",
+      "check": "Deterministic finality: a confirmed transaction cannot be reversed.",
+      "evidence": [
+        { "source": "S2", "quote": "Finality - Deterministic finality ensures transactions are confirmed once and cannot be reversed, providing certainty for financial markets" },
+        { "source": "S4", "quote": "Deterministic finality settles a transaction in a single round, final the moment it completes." } ] },
+    { "id": "F09", "kind": "redbelly",
+      "claim": "The people trading are verified.",
+      "check": "Redbelly describes a network of verified participants, with verifiable credentials gating every holder.",
+      "evidence": [
+        { "source": "S1", "quote": "A network of clean liquidity and verified participants enables structured products with clearly defined investor eligibility." },
+        { "source": "S2", "quote": "Accountability - Verified participants enable full auditability and clear accountability across all transactions" },
+        { "source": "S4", "quote": "Verifiable credentials gate every holder, enabling direct-to-investor distribution within your mandate." } ] },
+    { "id": "F10", "kind": "redbelly",
+      "claim": "Their private details stay protected.",
+      "check": "Identity is verified while privacy is protected with zero-knowledge proofs.",
+      "evidence": [
+        { "source": "S3", "quote": "Participants verify their identities, but their privacy remains protected through zero-knowledge proofs." },
+        { "source": "S12", "quote": "All users are verified using digital identities and zero-knowledge proofs (ZKP), ensuring compliance without compromising personal privacy." } ] },
+    { "id": "F11", "kind": "redbelly",
+      "claim": "The rules are built in. Before a trade goes through, the system checks the buyer is allowed to buy it. If not, it doesn't happen.",
+      "check": "Eligibility is enforced at the point of trade; trades that fail a check do not proceed.",
+      "evidence": [
+        { "source": "S2", "quote": "A network of clean liquidity, combined with verifiable credentials enable tokenised investment products with defined investor eligibility, enforced at the point of trade." },
+        { "source": "S6", "quote": "Before any trade proceeds, the investor's identity, eligibility (including wholesale or sophisticated status where required) and your limits are verified automatically. Trades that fail a check do not proceed, and every check is logged." } ] },
+    { "id": "F12", "kind": "redbelly",
+      "claim": "Things like property, loans, bonds and investment funds can be issued and traded digitally.",
+      "check": "Redbelly lists these asset classes; the RBA report records funds, bonds and loan-backed securities piloted on Redbelly.",
+      "evidence": [
+        { "source": "S1", "quote": "Treasuries & Bonds, Private Credit, Carbon Credits, Derivatives & Commodities, Insurance, Real Estate" },
+        { "source": "S1", "quote": "Redbelly provides the infrastructure to issue, manage, and distribute regulated digital financial assets to a global investor base." },
+        { "source": "S9", "page": "p. 61", "quote": "Macropod piloted two use cases. The first use case tested issuance, trading and redemption of tokenised units in a wholesale managed investment scheme ... The second use case tested a tokenised corporate bond ... used in use cases: Redbelly Network." },
+        { "source": "S9", "page": "p. 61", "quote": "NotCentralised piloted the structuring, issuance and management of a tokenised structured finance security backed by loans ... used in use case: Redbelly Network." } ] },
+    { "id": "F13", "kind": "redbelly",
+      "claim": "They settle almost instantly.",
+      "check": "Settlement is described as quasi-instant, moving from two days (T+2) to the same day (T+0).",
+      "evidence": [
+        { "source": "S4", "quote": "Settlement is quasi-instant. Deterministic consensus finalises a transaction in a single round, with finality the moment it completes." },
+        { "source": "S5", "quote": "Move from T+2 to T+0 settlement." } ] },
+    { "id": "F14", "kind": "definition",
+      "claim": "People call this tokenisation: issuing and trading a real asset as a digital version.",
+      "check": "Plain-language definition, consistent with how Redbelly and the Acacia pilot describe a digital twin of a real asset.",
+      "evidence": [
+        { "source": "S2", "quote": "Asset issuers can issue and distribute products globally, with compliance built into the infrastructure" },
+        { "source": "S8", "quote": "... the consortium is mirroring a live digital twin of the real-world asset, the Wisr Freedom Trust 2025-1 ..." } ] },
+    { "id": "F15", "kind": "redbelly",
+      "claim": "In Project Acacia, the Reserve Bank of Australia trialled a pilot digital form of its own money.",
+      "check": "The RBA and the Digital Finance CRC ran Project Acacia and issued a pilot wholesale central bank digital currency (wCBDC).",
+      "evidence": [
+        { "source": "S10", "quote": "The use cases also explored multiple methods for settling tokenised asset transactions using different forms of public and private digital money, including traditional RBA exchange settlement account (ESA) balances, a pilot wholesale central bank digital currency (wCBDC), tokenised commercial bank deposits and stablecoins." },
+        { "source": "S9", "page": "p. 13", "quote": "The total value of pilot wCBDC issuance over the project was $4.4 million with individual transaction values of up to $250,000 seen in use cases." } ] },
+    { "id": "F16", "kind": "redbelly",
+      "claim": "Redbelly was one of three platforms that carried it.",
+      "check": "The RBA final report names three platforms used with pilot wCBDC: AP+ HashSphere, Canvas Connect and Redbelly Network.",
+      "evidence": [
+        { "source": "S9", "page": "p. 13", "quote": "Use cases used three of the short-listed ... platforms for their experimentation with pilot wCBDC: Australian Payments Plus's (AP+) HashSphere instance ..., Canvas Connect ..., and Redbelly Network ..." } ] }
+  ],
+  "on_screen": [
+    { "text": "Sydney, London", "kind": "illustration", "note": "Example places for the photo comparison." },
+    { "text": "Bank, Registry, Fund manager, Trustee", "kind": "illustration", "note": "Example firms that keep their own records today. Generic roles, no real company implied." },
+    { "text": "Buyer, Seller, Buyer A, Buyer B", "kind": "illustration", "note": "Generic people in the animated examples." },
+    { "text": "ID check: Name, Date of birth, Address", "kind": "illustration", "note": "Generic identity fields, no real data." },
+    { "text": "Product rules: Identity verified, Eligible for this product, Within limits", "kind": "fact", "facts": ["F11"], "note": "The three checks Tokeniser lists: identity, eligibility and limits." },
+    { "text": "AP+ HashSphere, Redbelly Network, Canvas Connect, 1 of 3 platforms", "kind": "fact", "facts": ["F16"], "note": "Platform names as given in the RBA final report, p. 13." },
+    { "text": "Source: RBA and DFCRC, Project Acacia final report, May 2026", "kind": "citation", "facts": ["F15", "F16"] },
+    { "text": "Facts last verified 30 October 2026", "kind": "dated line", "note": "Required by the DAO brand kit for graphics that carry facts which can expire." }
+  ]
+}

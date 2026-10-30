@@ -1,0 +1,284 @@
+{
+  "title": "Redbelly in Simple Terms",
+  "format": "Short video, 16:9, 1920x1080, under 90 seconds",
+  "audience": "Someone with no crypto knowledge: a friend, a parent, a business owner",
+  "last_verified": "2026-10-30",
+  "scenes": [
+    {
+      "id": "hook",
+      "name": "The odd delay"
+    },
+    {
+      "id": "problem",
+      "name": "Two places, many copies"
+    },
+    {
+      "id": "onestep",
+      "name": "One step"
+    },
+    {
+      "id": "people",
+      "name": "Verified people"
+    },
+    {
+      "id": "rules",
+      "name": "Rules built in"
+    },
+    {
+      "id": "assets",
+      "name": "What it is for"
+    },
+    {
+      "id": "proof",
+      "name": "Where it comes from"
+    },
+    {
+      "id": "close",
+      "name": "The three ideas"
+    }
+  ],
+  "lines": [
+    {
+      "id": "L01",
+      "scene": "hook",
+      "pause_after": 0.35,
+      "facts": [
+        "F01"
+      ],
+      "text": "You can send a photo around the world in a second.",
+      "captions": [
+        "You can send a photo",
+        "around the world in a second."
+      ]
+    },
+    {
+      "id": "L02",
+      "scene": "hook",
+      "pause_after": 0.7,
+      "facts": [
+        "F02"
+      ],
+      "text": "So why can buying into a fund still take two business days to settle?",
+      "captions": [
+        "So why can buying into a fund",
+        "still take two business days to settle?"
+      ]
+    },
+    {
+      "id": "L03",
+      "scene": "problem",
+      "pause_after": 0.3,
+      "facts": [
+        "F03"
+      ],
+      "text": "Because the money sits in one place, and the record of who owns what sits in another.",
+      "captions": [
+        "Because the money sits in one place,",
+        "and the record of who owns what",
+        "sits in another."
+      ]
+    },
+    {
+      "id": "L04",
+      "scene": "problem",
+      "pause_after": 0.75,
+      "facts": [
+        "F03"
+      ],
+      "text": "Different firms keep their own copies, and someone has to check they match.",
+      "captions": [
+        "Different firms keep their own copies,",
+        "and someone has to check they match."
+      ]
+    },
+    {
+      "id": "L05",
+      "scene": "onestep",
+      "pause_after": 0.4,
+      "facts": [
+        "F04",
+        "F05",
+        "F06"
+      ],
+      "text": "Redbelly is a public network, built in Australia, that brings the two together.",
+      "captions": [
+        "Redbelly is a public network,",
+        "built in Australia,",
+        "that brings the two together."
+      ]
+    },
+    {
+      "id": "L06",
+      "scene": "onestep",
+      "pause_after": 0.3,
+      "facts": [
+        "F07"
+      ],
+      "text": "Payment and ownership move in one step."
+    },
+    {
+      "id": "L07",
+      "scene": "onestep",
+      "pause_after": 0.3,
+      "facts": [
+        "F07"
+      ],
+      "text": "If either side fails, nothing moves."
+    },
+    {
+      "id": "L08",
+      "scene": "onestep",
+      "pause_after": 0.75,
+      "facts": [
+        "F08"
+      ],
+      "text": "Once it's done, it's final."
+    },
+    {
+      "id": "L09",
+      "scene": "people",
+      "pause_after": 0.25,
+      "facts": [],
+      "text": "And it's not a free-for-all."
+    },
+    {
+      "id": "L10",
+      "scene": "people",
+      "pause_after": 0.7,
+      "facts": [
+        "F09",
+        "F10"
+      ],
+      "text": "The people trading are verified, a bit like showing ID at a bank, and their private details stay protected.",
+      "tts": "The people trading are verified, a bit like showing I.D. at a bank, and their private details stay protected.",
+      "captions": [
+        "The people trading are verified,",
+        "a bit like showing ID at a bank,",
+        "and their private details stay protected."
+      ]
+    },
+    {
+      "id": "L11",
+      "scene": "rules",
+      "pause_after": 0.3,
+      "facts": [
+        "F11"
+      ],
+      "text": "The rules are built in too."
+    },
+    {
+      "id": "L12",
+      "scene": "rules",
+      "pause_after": 0.3,
+      "facts": [
+        "F11"
+      ],
+      "text": "Before a trade goes through, the system checks the buyer is allowed to buy it.",
+      "captions": [
+        "Before a trade goes through,",
+        "the system checks",
+        "the buyer is allowed to buy it."
+      ]
+    },
+    {
+      "id": "L13",
+      "scene": "rules",
+      "pause_after": 0.75,
+      "facts": [
+        "F11"
+      ],
+      "text": "If not, it simply doesn't happen."
+    },
+    {
+      "id": "L14",
+      "scene": "assets",
+      "pause_after": 0.3,
+      "facts": [
+        "F12",
+        "F13"
+      ],
+      "text": "So things like property, loans, bonds and investment funds can be issued and traded digitally, and settle almost instantly.",
+      "captions": [
+        "So things like property, loans,",
+        "bonds and investment funds",
+        "can be issued and traded digitally,",
+        "and settle almost instantly."
+      ]
+    },
+    {
+      "id": "L15",
+      "scene": "assets",
+      "pause_after": 0.8,
+      "facts": [
+        "F14"
+      ],
+      "text": "People call this tokenisation."
+    },
+    {
+      "id": "L16",
+      "scene": "proof",
+      "pause_after": 0.4,
+      "facts": [
+        "F05"
+      ],
+      "text": "Redbelly grew out of research at the University of Sydney and CSIRO, Australia's national science agency.",
+      "tts": "Redbelly grew out of research at the University of Sydney and C.S.I.R.O., Australia's national science agency.",
+      "captions": [
+        "Redbelly grew out of research",
+        "at the University of Sydney and CSIRO,",
+        "Australia's national science agency."
+      ]
+    },
+    {
+      "id": "L17",
+      "scene": "proof",
+      "pause_after": 0.85,
+      "facts": [
+        "F15",
+        "F16"
+      ],
+      "text": "And when the Reserve Bank of Australia trialled a pilot digital form of its own money, in Project Acacia, Redbelly was one of three platforms that carried it.",
+      "captions": [
+        "And when the Reserve Bank of Australia",
+        "trialled a pilot digital form",
+        "of its own money, in Project Acacia,",
+        "Redbelly was one of three",
+        "platforms that carried it."
+      ]
+    },
+    {
+      "id": "L18",
+      "scene": "close",
+      "pause_after": 0.25,
+      "facts": [
+        "F09"
+      ],
+      "text": "Verified people."
+    },
+    {
+      "id": "L19",
+      "scene": "close",
+      "pause_after": 0.25,
+      "facts": [
+        "F11"
+      ],
+      "text": "Rules built in."
+    },
+    {
+      "id": "L20",
+      "scene": "close",
+      "pause_after": 0.45,
+      "facts": [
+        "F07"
+      ],
+      "text": "Done in one step."
+    },
+    {
+      "id": "L21",
+      "scene": "close",
+      "pause_after": 0.0,
+      "facts": [],
+      "text": "That's Redbelly."
+    }
+  ]
+}
