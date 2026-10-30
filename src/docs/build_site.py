@@ -101,13 +101,15 @@ a{color:var(--primary);text-underline-offset:3px}a:hover{color:var(--brand)}
 @media (max-width:760px){.wrap{padding:0 16px}body{font-size:16px}}
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--deep) 82%,transparent);backdrop-filter:blur(14px);
 border-bottom:1px solid var(--edge)}
-header.top .wrap{display:flex;align-items:center;gap:24px;height:72px}
+header.top .wrap{display:flex;align-items:center;gap:24px;height:64px}
 header.top img{height:40px;width:auto;display:block}
 .logo-light{display:none!important}
 :root[data-theme=light] .logo-dark{display:none!important}:root[data-theme=light] .logo-light{display:block!important}
 @media (prefers-color-scheme:light){:root:not([data-theme=dark]) .logo-dark{display:none!important}:root:not([data-theme=dark]) .logo-light{display:block!important}}
-nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
-nav a{color:var(--on2);text-decoration:none;font-weight:600;font-size:14px}nav a:hover{color:var(--on)}
+nav{display:flex;gap:4px;margin-left:auto;align-self:stretch}
+nav a{position:relative;display:flex;align-items:center;padding:0 12px;color:var(--outline);text-decoration:none;font-weight:500;font-size:15px;transition:color .15s}
+nav a:hover,nav a[aria-current="page"]{color:var(--on)}
+nav a[aria-current="page"]::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;border-radius:9999px;background:var(--brand)}
 .theme{background:none;border:1px solid var(--ov);color:var(--on2);border-radius:4px;padding:7px 10px;cursor:pointer;display:inline-flex}
 .theme:hover{border-color:var(--brand);color:var(--on)}
 @media (max-width:860px){nav{display:none}.theme{margin-left:auto}}
@@ -316,6 +318,18 @@ document.getElementById("theme").addEventListener("click",()=>{{
   const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":!matchMedia("(prefers-color-scheme: light)").matches;
   r.dataset.theme=dark?"light":"dark";try{{localStorage.setItem("theme",r.dataset.theme)}}catch(e){{}}
 }});
+// the section in view gets the red underline in the nav, as on the Task Board
+const navLinks=[...document.querySelectorAll('nav a[href^="#"]')];
+const navSecs=navLinks.map((a)=>document.getElementById(a.getAttribute("href").slice(1)));
+let spyQueued=false;
+function spy(){{
+  spyQueued=false;let cur=0;const line=Math.max(110,innerHeight*0.3);
+  navSecs.forEach((s,i)=>{{if(s&&s.getBoundingClientRect().top<=line)cur=i;}});
+  if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)cur=navSecs.length-1;
+  navLinks.forEach((a,i)=>i===cur?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+}}
+addEventListener("scroll",()=>{{if(!spyQueued){{spyQueued=true;requestAnimationFrame(spy);}}}},{{passive:true}});
+addEventListener("resize",spy);addEventListener("hashchange",spy);spy();
 </script>
 </body>
 </html>
