@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redbelly in Simple Terms, video stage</title>
+<link rel="stylesheet" href="../../assets/fonts/fonts.css">
+<style>
+  :root {
+    --surface: #0c1317; --deep: #0a1014; --lowest: #070c0f; --slate: #141f26; --steel: #1d3140;
+    --edge: #263641; --container: #17222a; --high: #223039; --ov: #34444f; --outline: #8fa1ad;
+    --on: #f1f5f8; --on2: #c2ced6; --brand: #EF5350; --primary: #ffb3ae; --ok: #86EFAC; --warn: #FCD34D;
+    --sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--deep); }
+  body { font-family: var(--sans); color: var(--on); -webkit-font-smoothing: antialiased; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--surface); }
+  .abs { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+  .scene { position: absolute; inset: 0; }
+  svg.full { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+
+  .card { background: var(--slate); border: 2px solid var(--edge); border-radius: 12px; }
+  .card.steel { background: var(--steel); border-color: #2c4556; }
+  .card.well { background: var(--lowest); border-color: var(--high); }
+
+  .h-xl { font-weight: 700; font-size: 80px; letter-spacing: -0.02em; line-height: 1.05; }
+  .h-lg { font-weight: 700; font-size: 60px; letter-spacing: -0.02em; line-height: 1.1; }
+  .h-md { font-weight: 600; font-size: 42px; letter-spacing: -0.01em; line-height: 1.15; }
+  .h-sm { font-weight: 600; font-size: 34px; letter-spacing: -0.01em; line-height: 1.2; }
+  .body { font-weight: 400; font-size: 28px; line-height: 1.45; color: var(--on2); }
+  .caps { font-weight: 700; font-size: 21px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--outline); }
+  .mono { font-family: var(--mono); font-weight: 500; font-size: 22px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--outline); }
+  .muted { color: var(--outline); }
+  .accent { color: var(--primary); }
+  .ok { color: var(--ok); }
+  .warn { color: var(--warn); }
+  .center { text-align: center; }
+  .nowrap { white-space: nowrap; }
+
+  .ico { display: inline-flex; align-items: center; justify-content: center; }
+  .ico svg { width: 100%; height: 100%; }
+  .ring { border-radius: 9999px; display: flex; align-items: center; justify-content: center; }
+
+  /* status: a dot plus a monospace label, never a filled pill */
+  .status { display: inline-flex; align-items: center; gap: 12px; font-family: var(--mono); font-weight: 600;
+            font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap;
+            background: var(--lowest); border: 2px solid var(--high); border-radius: 6px; padding: 10px 16px; }
+  .status i { width: 12px; height: 12px; border-radius: 9999px; display: inline-block; }
+  .status.ok i { background: var(--ok); } .status.ok { color: var(--ok); }
+  .status.warn i { background: var(--warn); } .status.warn { color: var(--warn); }
+  .status.bad i { background: var(--brand); } .status.bad { color: var(--primary); }
+  .status.idle i { background: var(--outline); } .status.idle { color: var(--on2); }
+
+  .chip { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; border-radius: 6px;
+          border: 2px solid var(--ov); background: var(--container); font-weight: 600; font-size: 26px; white-space: nowrap; }
+  .chip .ico { width: 28px; height: 28px; color: var(--primary); }
+
+  #chrome-label { position: absolute; left: 64px; top: 52px; display: flex; gap: 18px; align-items: baseline; }
+  #chrome-label .n { font-family: var(--mono); font-weight: 600; font-size: 22px; color: var(--brand); letter-spacing: 0.05em; }
+  #progress { position: absolute; right: 64px; top: 58px; display: flex; gap: 8px; }
+  #progress div { width: 44px; height: 5px; border-radius: 3px; background: var(--high); overflow: hidden; }
+  #progress div span { display: block; height: 100%; width: 0; background: var(--brand); }
+
+  #captions { position: absolute; left: 160px; right: 160px; bottom: 62px; text-align: center; }
+  #captions .box { display: inline-block; background: rgba(7, 12, 15, 0.86); border: 2px solid var(--edge);
+                   border-radius: 10px; padding: 16px 30px 18px; font-weight: 600; font-size: 46px; line-height: 1.25;
+                   letter-spacing: -0.005em; color: var(--on); }
+  #captions .w { transition: none; }
+  #captions .w.on { color: var(--primary); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="bg" class="full"></svg>
+  <div id="scenes"></div>
+  <div id="chrome-label"><span class="n">01</span><span class="caps" id="chrome-name"></span></div>
+  <div id="progress"></div>
+  <div id="captions"><div class="box" id="capbox"></div></div>
+</div>
+<script src="icons.js"></script>
+<script src="../../build/timeline.js"></script>
+<script src="stage.js"></script>
+</body>
+</html>
