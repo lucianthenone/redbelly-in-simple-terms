@@ -18,6 +18,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from content import (BENCHMARKS, FAILURES, NAME, PRODUCTION, ROOT, STORYBOARD, load, long_date, mmss,  # noqa: E402
                      storyboard_times)
 
+# Link previews (Discord, X) need absolute image URLs, so the deployed address is spelled out.
+SITE_URL = "https://redbelly-in-simple-terms.vercel.app/"
 SITE = ROOT / "site"
 IMG = SITE / "img"
 
@@ -234,8 +236,13 @@ def page(d, scenes):
 <meta name="description" content="A {secs} second video that explains what Redbelly does and why it matters, in everyday language.">
 <meta property="og:title" content="Redbelly in Simple Terms">
 <meta property="og:description" content="What Redbelly does and why it matters, in {secs} seconds of everyday language.">
-<meta property="og:image" content="site/img/og.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{SITE_URL}">
+<meta property="og:image" content="{SITE_URL}site/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}site/img/og.png">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" sizes="512x512" href="site/img/icon.png">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
