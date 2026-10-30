@@ -1,0 +1,21 @@
+You can send a photo around the world in a second.
+So why can buying into a fund still take two business days to settle?
+Because the money sits in one place, and the record of who owns what sits in another.
+Different firms keep their own copies, and someone has to check they match.
+Redbelly is a public network, built in Australia, that brings the two together.
+Payment and ownership move in one step.
+If either side fails, nothing moves.
+Once it's done, it's final.
+And it's not a free-for-all.
+The people trading are verified, a bit like showing ID at a bank, and their private details stay protected.
+The rules are built in too.
+Before a trade goes through, the system checks the buyer is allowed to buy it.
+If not, it simply doesn't happen.
+So things like property, loans, bonds and investment funds can be issued and traded digitally, and settle almost instantly.
+People call this tokenisation.
+Redbelly grew out of research at the University of Sydney and CSIRO, Australia's national science agency.
+And when the Reserve Bank of Australia trialled a pilot digital form of its own money, in Project Acacia, Redbelly was one of three platforms that carried it.
+Verified people.
+Rules built in.
+Done in one step.
+That's Redbelly.

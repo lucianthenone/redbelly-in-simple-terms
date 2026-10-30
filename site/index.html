@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redbelly in Simple Terms</title>
+<meta name="description" content="A 88 second video that explains what Redbelly does and why it matters, in everyday language.">
+<meta property="og:title" content="Redbelly in Simple Terms">
+<meta property="og:description" content="What Redbelly does and why it matters, in 88 seconds of everyday language.">
+<meta property="og:image" content="img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="noindex">
+<link rel="icon" href="img/dao-logo-on-dark.png">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+:root{color-scheme:dark;--surface:#0c1317;--deep:#0a1014;--lowest:#070c0f;--low:#111a20;--container:#17222a;--high:#223039;
+--slate:#141f26;--steel:#1d3140;--edge:#263641;--on:#f1f5f8;--on2:#c2ced6;--outline:#8fa1ad;--ov:#34444f;--brand:#EF5350;
+--brand-hover:#f95a56;--primary:#ffb3ae;--ok:#86EFAC;--warn:#FCD34D;
+--sans:"Be Vietnam Pro",ui-sans-serif,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace}
+:root[data-theme=light]{color-scheme:light;--surface:#EDF1F4;--deep:#EDF1F4;--lowest:#FFFFFF;--low:#F4F6F8;--container:#E6EBEF;
+--high:#DAE1E7;--slate:#FFFFFF;--steel:#DDE6ED;--edge:#D3DBE1;--on:#0F1A22;--on2:#394853;--outline:#596975;--ov:#C3CDD4;
+--brand-hover:#D93E3B;--primary:#B3272A;--ok:#15803D;--warn:#A16207}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){color-scheme:light;--surface:#EDF1F4;--deep:#EDF1F4;--lowest:#FFFFFF;
+--low:#F4F6F8;--container:#E6EBEF;--high:#DAE1E7;--slate:#FFFFFF;--steel:#DDE6ED;--edge:#D3DBE1;--on:#0F1A22;--on2:#394853;
+--outline:#596975;--ov:#C3CDD4;--brand-hover:#D93E3B;--primary:#B3272A;--ok:#15803D;--warn:#A16207}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--deep);color:var(--on);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--primary);text-underline-offset:3px}a:hover{color:var(--brand)}
+.wrap{max-width:1280px;margin:0 auto;padding:0 64px}
+@media (max-width:760px){.wrap{padding:0 16px}body{font-size:16px}}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--deep) 82%,transparent);backdrop-filter:blur(14px);
+border-bottom:1px solid var(--edge)}
+header.top .wrap{display:flex;align-items:center;gap:24px;height:72px}
+header.top img{height:40px;width:auto;display:block}
+.logo-light{display:none!important}
+:root[data-theme=light] .logo-dark{display:none!important}:root[data-theme=light] .logo-light{display:block!important}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]) .logo-dark{display:none!important}:root:not([data-theme=dark]) .logo-light{display:block!important}}
+nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+nav a{color:var(--on2);text-decoration:none;font-weight:600;font-size:14px}nav a:hover{color:var(--on)}
+.theme{background:none;border:1px solid var(--ov);color:var(--on2);border-radius:4px;padding:7px 10px;cursor:pointer;display:inline-flex}
+.theme:hover{border-color:var(--brand);color:var(--on)}
+@media (max-width:860px){nav{display:none}.theme{margin-left:auto}}
+.hero{background:#1d3140;color:#f1f5f8;border-bottom:1px solid #263641}
+.hero .wrap{padding-top:56px;padding-bottom:56px;display:grid;grid-template-columns:1fr;gap:28px}
+.caps{font:700 12px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--outline)}
+.hero .caps{color:#8fa1ad}.hero .caps b{color:#ffb3ae;font-weight:700}
+h1{font:700 48px/1.08 var(--sans);letter-spacing:-.02em;margin:10px 0 0}
+@media (max-width:760px){h1{font-size:36px}}
+.lead{font-size:19px;color:#c2ced6;max-width:70ch;margin:14px 0 0}
+.player{border-radius:8px;overflow:hidden;border:1px solid #34444f;background:#070c0f;aspect-ratio:16/9}
+.player video{width:100%;height:100%;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:10px 22px;font:500 13px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:#c2ced6}
+.meta span b{color:#f1f5f8;font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:4px;font:600 15px/1 var(--sans);text-decoration:none;white-space:nowrap}
+.btn.primary{background:#EF5350;color:#fff}.btn.primary:hover{background:#f95a56;color:#fff}
+.btn.ghost{border:1px solid #34444f;color:#f1f5f8}.btn.ghost:hover{border-color:#EF5350;color:#fff}
+section{padding:72px 0;border-bottom:1px solid var(--edge)}
+section .head{max-width:75ch;margin-bottom:32px}
+h2{font:700 32px/1.15 var(--sans);letter-spacing:-.01em;margin:8px 0 10px}
+h3{font:600 20px/1.3 var(--sans);margin:0 0 6px}
+p{margin:0 0 12px;max-width:75ch}.muted{color:var(--outline)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media (max-width:900px){.grid3,.grid2{grid-template-columns:1fr}}
+.card{background:var(--slate);border:1px solid var(--edge);border-radius:8px}
+.card .ch{padding:18px 22px;border-bottom:1px solid var(--edge);display:flex;align-items:center;gap:12px}
+.card .cb{padding:18px 22px}
+.idea .ch svg{color:var(--primary)}
+.mono{font:500 13px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--outline)}
+.status{display:inline-flex;align-items:center;gap:8px;font:600 13px/1 var(--mono);letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.status i{width:8px;height:8px;border-radius:9999px;background:var(--ok);display:inline-block}.status{color:var(--ok)}
+table{width:100%;border-collapse:collapse;font-size:16px}
+th{text-align:left;font:700 12px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--outline);padding:12px 14px;border-bottom:1px solid var(--ov)}
+td{padding:14px;border-bottom:1px solid var(--high);vertical-align:top}
+td.tc{font:500 14px/1.5 var(--mono);color:var(--outline);white-space:nowrap}
+.tablebox{background:var(--slate);border:1px solid var(--edge);border-radius:8px;overflow-x:auto}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12px/1 var(--mono);letter-spacing:.05em;padding:6px 8px;border-radius:4px;border:1px solid var(--ov);color:var(--on2);text-decoration:none;white-space:nowrap}
+.chip:hover{border-color:var(--brand);color:var(--on)}
+.scene img{display:block;width:100%;height:auto;border-bottom:1px solid var(--edge);border-radius:8px 8px 0 0}
+.scene .cb p{color:var(--on2);font-size:16px;margin:0}
+.fact{scroll-margin-top:90px}
+.fact blockquote{margin:12px 0 0;padding:12px 16px;border-left:3px solid var(--brand);background:var(--low);border-radius:0 4px 4px 0;color:var(--on2);font-size:15px}
+.fact blockquote cite{display:block;margin-top:8px;font:500 12px/1.4 var(--mono);letter-spacing:.04em;text-transform:uppercase;font-style:normal}
+.fact .kind{margin-left:auto}
+.cols{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}@media (max-width:900px){.cols{grid-template-columns:1fr}}
+ol.src{padding-left:22px;margin:0}ol.src li{margin:0 0 10px}
+code{font:500 14px var(--mono);background:var(--container);padding:2px 6px;border-radius:4px}
+pre{font:500 14px/1.6 var(--mono);background:var(--lowest);border:1px solid var(--edge);border-radius:8px;padding:18px;overflow-x:auto;color:var(--on2)}
+.files td:first-child{font:500 14px var(--mono)}
+footer{padding:40px 0 64px;color:var(--outline);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+</style>
+<script>try{const t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img class="logo-dark" src="img/dao-logo-on-dark.png" alt="Redbelly DAO" width="56" height="40">
+  <img class="logo-light" src="img/dao-logo-on-light.png" alt="Redbelly DAO" width="56" height="40">
+  <nav><a href="#watch">Watch</a><a href="#idea">The idea</a><a href="#script">Script</a><a href="#storyboard">Storyboard</a><a href="#facts">Facts</a><a href="#checks">Checks</a><a href="#files">Files</a></nav>
+  <button class="theme" id="theme" aria-label="Switch between light and dark theme"><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-sun-moon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.9 4.9 1.4 1.4" />
+  <path d="m17.7 17.7 1.4 1.4" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.3 17.7-1.4 1.4" />
+  <path d="m19.1 4.9-1.4 1.4" />
+</svg></button>
+</div></header>
+
+<div class="hero" id="watch"><div class="wrap">
+  <div>
+    <div class="caps"><b>Redbelly DAO task</b> &nbsp; Video entry</div>
+    <h1>Redbelly in Simple Terms</h1>
+    <p class="lead">A 88 second video that explains what Redbelly does and why it matters, for someone who has never touched crypto. It never uses the word the task rules out, or any stand-in for it.</p>
+  </div>
+  <div class="player"><video controls preload="metadata" poster="img/poster.png" src="../submission/redbelly-in-simple-terms.mp4"></video></div>
+  <div class="meta"><span><b>88 s</b> long</span><span><b>1920 x 1080</b></span><span><b>60 fps</b></span><span><b>H.264</b> + AAC</span><span>Captions <b>burned in</b> + SRT</span><span><b>215</b> words</span></div>
+  <div class="btns">
+    <a class="btn primary" href="../submission/redbelly-in-simple-terms.mp4" download><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-file-check-2"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
+  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+  <path d="m3 15 2 2 4-4" />
+</svg>Download video</a>
+    <a class="btn ghost" href="../submission/redbelly-in-simple-terms-submission.pdf"><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-file-text"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+  <path d="M10 9H8" />
+  <path d="M16 13H8" />
+  <path d="M16 17H8" />
+</svg>Submission PDF</a>
+    <a class="btn ghost" href="../submission/redbelly-in-simple-terms.srt" download><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-scroll-text"
+  xmlns="http://www.w3.org/2000/svg"
+  width="18"
+  height="18"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 12h-5" />
+  <path d="M15 8h-5" />
+  <path d="M19 17V5a2 2 0 0 0-2-2H4" />
+  <path d="M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3" />
+</svg>Captions</a>
+  </div>
+</div></div>
+
+<main>
+<section id="idea"><div class="wrap">
+  <div class="head"><div class="caps">The idea</div><h2>Three ideas, said in plain words</h2>
+  <p>The video opens with a question anyone has felt: a photo crosses the world in a second, so why does buying into a fund still take two business days? The answer is that the money and the record of who owns what live in different places. Redbelly brings them together. The rest of the video is three ideas, and the close repeats them.</p></div>
+  <div class="grid3"><div class="card idea"><div class="ch"><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-user-check"
+  xmlns="http://www.w3.org/2000/svg"
+  width="26"
+  height="26"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <circle cx="9" cy="7" r="4" />
+  <polyline points="16 11 18 13 22 9" />
+</svg><h3 style="margin:0">Verified people</h3></div><div class="cb"><p>Everyone trading has proved who they are, a bit like showing ID at a bank, and their private details stay protected.</p><div class="chips"><a class=chip href=#F09>F09</a><a class=chip href=#F10>F10</a></div></div></div><div class="card idea"><div class="ch"><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-list-checks"
+  xmlns="http://www.w3.org/2000/svg"
+  width="26"
+  height="26"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m3 17 2 2 4-4" />
+  <path d="m3 7 2 2 4-4" />
+  <path d="M13 6h8" />
+  <path d="M13 12h8" />
+  <path d="M13 18h8" />
+</svg><h3 style="margin:0">Rules built in</h3></div><div class="cb"><p>Before any trade goes through, the system checks the buyer is allowed to buy that product. If not, the trade does not happen.</p><div class="chips"><a class=chip href=#F11>F11</a></div></div></div><div class="card idea"><div class="ch"><svg aria-hidden="true" focusable="false"
+  class="lucide lucide-arrow-left-right"
+  xmlns="http://www.w3.org/2000/svg"
+  width="26"
+  height="26"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M8 3 4 7l4 4" />
+  <path d="M4 7h16" />
+  <path d="m16 21 4-4-4-4" />
+  <path d="M20 17H4" />
+</svg><h3 style="margin:0">Done in one step</h3></div><div class="cb"><p>Payment and ownership move together. If either side fails, nothing moves. Once it is done, it is final.</p><div class="chips"><a class=chip href=#F07>F07</a><a class=chip href=#F08>F08</a></div></div></div></div>
+</div></section>
+
+<section id="script"><div class="wrap">
+  <div class="head"><div class="caps">Script</div><h2>Every word of the narration</h2>
+  <p>215 words in 21 lines. Timecodes are from the final cut. Each line links to the facts it relies on.</p></div>
+  <div class="tablebox"><table><thead><tr><th>Time</th><th>Narration</th><th>Facts</th></tr></thead><tbody><tr><td class="tc">0:00.6</td><td>You can send a photo around the world in a second.</td><td><div class="chips"><a class=chip href=#F01>F01</a></div></td></tr><tr><td class="tc">0:03.8</td><td>So why can buying into a fund still take two business days to settle?</td><td><div class="chips"><a class=chip href=#F02>F02</a></div></td></tr><tr><td class="tc">0:08.8</td><td>Because the money sits in one place, and the record of who owns what sits in another.</td><td><div class="chips"><a class=chip href=#F03>F03</a></div></td></tr><tr><td class="tc">0:13.9</td><td>Different firms keep their own copies, and someone has to check they match.</td><td><div class="chips"><a class=chip href=#F03>F03</a></div></td></tr><tr><td class="tc">0:18.7</td><td>Redbelly is a public network, built in Australia, that brings the two together.</td><td><div class="chips"><a class=chip href=#F04>F04</a><a class=chip href=#F05>F05</a><a class=chip href=#F06>F06</a></div></td></tr><tr><td class="tc">0:23.2</td><td>Payment and ownership move in one step.</td><td><div class="chips"><a class=chip href=#F07>F07</a></div></td></tr><tr><td class="tc">0:25.9</td><td>If either side fails, nothing moves.</td><td><div class="chips"><a class=chip href=#F07>F07</a></div></td></tr><tr><td class="tc">0:28.7</td><td>Once it&#x27;s done, it&#x27;s final.</td><td><div class="chips"><a class=chip href=#F08>F08</a></div></td></tr><tr><td class="tc">0:31.6</td><td>And it&#x27;s not a free-for-all.</td><td><div class="chips"></div></td></tr><tr><td class="tc">0:33.5</td><td>The people trading are verified, a bit like showing ID at a bank, and their private details stay protected.</td><td><div class="chips"><a class=chip href=#F09>F09</a><a class=chip href=#F10>F10</a></div></td></tr><tr><td class="tc">0:40.2</td><td>The rules are built in too.</td><td><div class="chips"><a class=chip href=#F11>F11</a></div></td></tr><tr><td class="tc">0:42.3</td><td>Before a trade goes through, the system checks the buyer is allowed to buy it.</td><td><div class="chips"><a class=chip href=#F11>F11</a></div></td></tr><tr><td class="tc">0:46.9</td><td>If not, it simply doesn&#x27;t happen.</td><td><div class="chips"><a class=chip href=#F11>F11</a></div></td></tr><tr><td class="tc">0:49.8</td><td>So things like property, loans, bonds and investment funds can be issued and traded digitally, and settle almost instantly.</td><td><div class="chips"><a class=chip href=#F12>F12</a><a class=chip href=#F13>F13</a></div></td></tr><tr><td class="tc">0:56.8</td><td>People call this tokenisation.</td><td><div class="chips"><a class=chip href=#F14>F14</a></div></td></tr><tr><td class="tc">0:59.5</td><td>Redbelly grew out of research at the University of Sydney and CSIRO, Australia&#x27;s national science agency.</td><td><div class="chips"><a class=chip href=#F05>F05</a></div></td></tr><tr><td class="tc">1:06.9</td><td>And when the Reserve Bank of Australia trialled a pilot digital form of its own money, in Project Acacia, Redbelly was one of three platforms that carried it.</td><td><div class="chips"><a class=chip href=#F15>F15</a><a class=chip href=#F16>F16</a></div></td></tr><tr><td class="tc">1:18.3</td><td>Verified people.</td><td><div class="chips"><a class=chip href=#F09>F09</a></div></td></tr><tr><td class="tc">1:19.8</td><td>Rules built in.</td><td><div class="chips"><a class=chip href=#F11>F11</a></div></td></tr><tr><td class="tc">1:21.2</td><td>Done in one step.</td><td><div class="chips"><a class=chip href=#F07>F07</a></div></td></tr><tr><td class="tc">1:23.0</td><td>That&#x27;s Redbelly.</td><td><div class="chips"></div></td></tr></tbody></table></div>
+</div></section>
+
+<section id="storyboard"><div class="wrap">
+  <div class="head"><div class="caps">Storyboard</div><h2>Eight scenes, one idea each</h2>
+  <p>Frames taken from the finished video. The burned-in captions are what a viewer sees with the sound off.</p></div>
+  <div class="grid2"><figure class="card scene" style="margin:0"><img src="img/scene-01.png" width="960" height="540" alt="Frame from scene 1, The odd delay"><div class="cb"><div class="mono" style="margin-bottom:6px">01 &nbsp; 0:00.0 &nbsp; The odd delay</div><p>A photo crosses the world in a second. Buying into a fund sits at Pending for two business days. The gap between the two sets up the question.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-02.png" width="960" height="540" alt="Frame from scene 2, Two places, many copies"><div class="cb"><div class="mono" style="margin-bottom:6px">02 &nbsp; 0:08.4 &nbsp; Two places, many copies</div><p>The money and the record of who owns what sit in separate systems. Four firms keep their own copies and someone checks they match. One does not.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-03.png" width="960" height="540" alt="Frame from scene 3, One step"><div class="cb"><div class="mono" style="margin-bottom:6px">03 &nbsp; 0:18.2 &nbsp; One step</div><p>Redbelly arrives. Payment and ownership swap in a single step. When one side fails, nothing moves. When the swap completes, it is final.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-04.png" width="960" height="540" alt="Frame from scene 4, Verified people"><div class="cb"><div class="mono" style="margin-bottom:6px">04 &nbsp; 0:31.1 &nbsp; Verified people</div><p>A crowd turns verified one person at a time. An ID check shows that identity is proven while the personal details stay hidden.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-05.png" width="960" height="540" alt="Frame from scene 5, Rules built in"><div class="cb"><div class="mono" style="margin-bottom:6px">05 &nbsp; 0:39.7 &nbsp; Rules built in</div><p>The product&#x27;s rules run before every trade. Buyer A passes all three checks. Buyer B is not eligible, so the trade is blocked.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-06.png" width="960" height="540" alt="Frame from scene 6, What it is for"><div class="cb"><div class="mono" style="margin-bottom:6px">06 &nbsp; 0:49.3 &nbsp; What it is for</div><p>Property, loans, bonds and investment funds become digital versions that settle almost instantly. A dictionary card names the idea: tokenisation.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-07.png" width="960" height="540" alt="Frame from scene 7, Where it comes from"><div class="cb"><div class="mono" style="margin-bottom:6px">07 &nbsp; 0:59.1 &nbsp; Where it comes from</div><p>Research at the University of Sydney and CSIRO leads to Redbelly. In Project Acacia, the Reserve Bank of Australia&#x27;s pilot digital money ran on three platforms. Redbelly is one of them.</p></div></figure><figure class="card scene" style="margin:0"><img src="img/scene-08.png" width="960" height="540" alt="Frame from scene 8, The three ideas"><div class="cb"><div class="mono" style="margin-bottom:6px">08 &nbsp; 1:17.9 &nbsp; The three ideas</div><p>Verified people. Rules built in. Done in one step. Then the logo, the web address and the date the facts were last checked.</p></div></figure></div>
+</div></section>
+
+<section id="facts"><div class="wrap">
+  <div class="head"><div class="caps">Fact check</div><h2>Where every fact comes from</h2>
+  <p>Every statement about Redbelly is backed by Redbelly's own public material or by the Reserve Bank of Australia. Quotes are copied from the source, and an ellipsis marks words left out. Facts last verified 30 October 2026.</p></div>
+  <div style="display:grid;gap:16px"><div class="card fact" id="F01"><div class="ch"><span class="chip">F01</span><h3 style="margin:0">You can send a photo around the world in a second.</h3><span class="mono kind">Context</span></div><div class="cb"><p class="muted">Everyday comparison to set up the contrast. Not a claim about Redbelly.</p></div></div><div class="card fact" id="F02"><div class="ch"><span class="chip">F02</span><h3 style="margin:0">Buying into a fund can still take two business days to settle.</h3><span class="mono kind">Context</span></div><div class="cb"><p class="muted">Today&#x27;s typical settlement window for listed funds, as described by Tokeniser.</p><blockquote>"Every subscription, redemption and transfer remains unsettled for two business days in listed funds, and often longer in private assets."<cite><a href="https://tokeniser.com/product/superpowers/instant-settlement">S5 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F03"><div class="ch"><span class="chip">F03</span><h3 style="margin:0">The money and the record of who owns what sit in different places, and the copies have to be checked against each other.</h3><span class="mono kind">Context</span></div><div class="cb"><p class="muted">How settlement works today: cash and ownership records move separately and must be reconciled.</p><blockquote>"Today, cash and units move separately, and records are updated days later."<cite><a href="https://tokeniser.com/product/superpowers/instant-settlement">S5 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"When the trade and the register update together, reconciliation is no longer required and settlement breaks are reduced."<cite><a href="https://tokeniser.com/product/superpowers/instant-settlement">S5 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"The intricate payment waterfalls, inter-system reconciliations, and multi-party dependencies have traditionally limited transparency and liquidity."<cite><a href="https://redbelly.network/blog/tokenised-asset-backed-security-transaction-pilot-launches-under-Project-Acacia">S8 Redbelly Network blog</a></cite></blockquote></div></div><div class="card fact" id="F04"><div class="ch"><span class="chip">F04</span><h3 style="margin:0">Redbelly is a public network.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Described as public by Tokeniser and as public in the RBA report.</p><blockquote>"Is Redbelly a private network? No. Redbelly is a public network ..."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"Pilot use cases were conducted on a range of public and private ... platforms, including ... Redbelly Network (public) ..."<cite><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">S9 Reserve Bank of Australia and Digital Finance CRC</a>, p. 12</cite></blockquote></div></div><div class="card fact" id="F05"><div class="ch"><span class="chip">F05</span><h3 style="margin:0">Redbelly was built in Australia and grew out of research at the University of Sydney and CSIRO, Australia&#x27;s national science agency.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Origin stated by Redbelly and Tokeniser; joint venture listed in Redbelly&#x27;s own timeline.</p><blockquote>"Developed at the University of Sydney and CSIRO, Redbelly Network&#x27;s homegrown ..."<cite><a href="https://redbelly.network/projectacacia">S3 Redbelly Network</a></cite></blockquote><blockquote>"Redbelly was born from research at the University of Sydney and CSIRO, Australia&#x27;s government science agency, with a patented consensus method built from scratch."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"CSIRO ... Australia&#x27;s national science agency worked alongside that research to take it from published papers to a network that institutions can run in production, under Australian governance."<cite><a href="https://tokeniser.com/about">S7 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"Block8, CSIRO and University of Sydney create Redbelly Network as a joint venture with seed funding"<cite><a href="https://redbelly.network/about-us">S11 Redbelly Network</a></cite></blockquote></div></div><div class="card fact" id="F06"><div class="ch"><span class="chip">F06</span><h3 style="margin:0">Redbelly brings the money and the ownership records together in one place.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Redbelly describes its design as joining payments and asset records into a single system, which reduces reconciliation.</p><blockquote>"Its deterministic consensus unifies payments and asset ... into a single system, reducing reconciliation and enabling collateral mobility."<cite><a href="https://redbelly.network/blog/tokenised-asset-backed-security-transaction-pilot-launches-under-Project-Acacia">S8 Redbelly Network blog</a></cite></blockquote><blockquote>"Establish digital registries as a shared source of truth across issuers, managers, and investors."<cite><a href="https://redbelly.network">S1 Redbelly Network</a></cite></blockquote></div></div><div class="card fact" id="F07"><div class="ch"><span class="chip">F07</span><h3 style="margin:0">Payment and ownership move in one step. If either side fails, nothing moves.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Tokeniser, which runs on Redbelly, exchanges cash and units in a single step or not at all.</p><blockquote>"On Tokeniser, cash and units are exchanged in a single step and the register updates simultaneously, or the transaction does not proceed."<cite><a href="https://tokeniser.com/product/superpowers/instant-settlement">S5 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"Tokeniser gives you a familiar platform. Underneath it runs Redbelly Network ..."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F08"><div class="ch"><span class="chip">F08</span><h3 style="margin:0">Once it&#x27;s done, it&#x27;s final.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Deterministic finality: a confirmed transaction cannot be reversed.</p><blockquote>"Finality - Deterministic finality ensures transactions are confirmed once and cannot be reversed, providing certainty for financial markets"<cite><a href="https://redbelly.network/asset-tokenisation">S2 Redbelly Network</a></cite></blockquote><blockquote>"Deterministic finality settles a transaction in a single round, final the moment it completes."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F09"><div class="ch"><span class="chip">F09</span><h3 style="margin:0">The people trading are verified.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Redbelly describes a network of verified participants, with verifiable credentials gating every holder.</p><blockquote>"A network of clean liquidity and verified participants enables structured products with clearly defined investor eligibility."<cite><a href="https://redbelly.network">S1 Redbelly Network</a></cite></blockquote><blockquote>"Accountability - Verified participants enable full auditability and clear accountability across all transactions"<cite><a href="https://redbelly.network/asset-tokenisation">S2 Redbelly Network</a></cite></blockquote><blockquote>"Verifiable credentials gate every holder, enabling direct-to-investor distribution within your mandate."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F10"><div class="ch"><span class="chip">F10</span><h3 style="margin:0">Their private details stay protected.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Identity is verified while privacy is protected with zero-knowledge proofs.</p><blockquote>"Participants verify their identities, but their privacy remains protected through zero-knowledge proofs."<cite><a href="https://redbelly.network/projectacacia">S3 Redbelly Network</a></cite></blockquote><blockquote>"All users are verified using digital identities and zero-knowledge proofs (ZKP), ensuring compliance without compromising personal privacy."<cite><a href="https://redbelly.network/blog/what-sets-redbelly-network-apart">S12 Redbelly Network blog</a></cite></blockquote></div></div><div class="card fact" id="F11"><div class="ch"><span class="chip">F11</span><h3 style="margin:0">The rules are built in. Before a trade goes through, the system checks the buyer is allowed to buy it. If not, it doesn&#x27;t happen.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Eligibility is enforced at the point of trade; trades that fail a check do not proceed.</p><blockquote>"A network of clean liquidity, combined with verifiable credentials enable tokenised investment products with defined investor eligibility, enforced at the point of trade."<cite><a href="https://redbelly.network/asset-tokenisation">S2 Redbelly Network</a></cite></blockquote><blockquote>"Before any trade proceeds, the investor&#x27;s identity, eligibility (including wholesale or sophisticated status where required) and your limits are verified automatically. Trades that fail a check do not proceed, and every check is logged."<cite><a href="https://tokeniser.com/product/superpowers/automated-compliance">S6 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F12"><div class="ch"><span class="chip">F12</span><h3 style="margin:0">Things like property, loans, bonds and investment funds can be issued and traded digitally.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Redbelly lists these asset classes; the RBA report records funds, bonds and loan-backed securities piloted on Redbelly.</p><blockquote>"Treasuries &amp; Bonds, Private Credit, Carbon Credits, Derivatives &amp; Commodities, Insurance, Real Estate"<cite><a href="https://redbelly.network">S1 Redbelly Network</a></cite></blockquote><blockquote>"Redbelly provides the infrastructure to issue, manage, and distribute regulated digital financial assets to a global investor base."<cite><a href="https://redbelly.network">S1 Redbelly Network</a></cite></blockquote><blockquote>"Macropod piloted two use cases. The first use case tested issuance, trading and redemption of tokenised units in a wholesale managed investment scheme ... The second use case tested a tokenised corporate bond ... used in use cases: Redbelly Network."<cite><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">S9 Reserve Bank of Australia and Digital Finance CRC</a>, p. 61</cite></blockquote><blockquote>"NotCentralised piloted the structuring, issuance and management of a tokenised structured finance security backed by loans ... used in use case: Redbelly Network."<cite><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">S9 Reserve Bank of Australia and Digital Finance CRC</a>, p. 61</cite></blockquote></div></div><div class="card fact" id="F13"><div class="ch"><span class="chip">F13</span><h3 style="margin:0">They settle almost instantly.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">Settlement is described as quasi-instant, moving from two days (T+2) to the same day (T+0).</p><blockquote>"Settlement is quasi-instant. Deterministic consensus finalises a transaction in a single round, with finality the moment it completes."<cite><a href="https://tokeniser.com/technology">S4 Tokeniser (a Redbelly Network project)</a></cite></blockquote><blockquote>"Move from T+2 to T+0 settlement."<cite><a href="https://tokeniser.com/product/superpowers/instant-settlement">S5 Tokeniser (a Redbelly Network project)</a></cite></blockquote></div></div><div class="card fact" id="F14"><div class="ch"><span class="chip">F14</span><h3 style="margin:0">People call this tokenisation: issuing and trading a real asset as a digital version.</h3><span class="mono kind">Definition</span></div><div class="cb"><p class="muted">Plain-language definition, consistent with how Redbelly and the Acacia pilot describe a digital twin of a real asset.</p><blockquote>"Asset issuers can issue and distribute products globally, with compliance built into the infrastructure"<cite><a href="https://redbelly.network/asset-tokenisation">S2 Redbelly Network</a></cite></blockquote><blockquote>"... the consortium is mirroring a live digital twin of the real-world asset, the Wisr Freedom Trust 2025-1 ..."<cite><a href="https://redbelly.network/blog/tokenised-asset-backed-security-transaction-pilot-launches-under-Project-Acacia">S8 Redbelly Network blog</a></cite></blockquote></div></div><div class="card fact" id="F15"><div class="ch"><span class="chip">F15</span><h3 style="margin:0">In Project Acacia, the Reserve Bank of Australia trialled a pilot digital form of its own money.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">The RBA and the Digital Finance CRC ran Project Acacia and issued a pilot wholesale central bank digital currency (wCBDC).</p><blockquote>"The use cases also explored multiple methods for settling tokenised asset transactions using different forms of public and private digital money, including traditional RBA exchange settlement account (ESA) balances, a pilot wholesale central bank digital currency (wCBDC), tokenised commercial bank deposits and stablecoins."<cite><a href="https://www.rba.gov.au/media-releases/2026/mr-26-13.html">S10 Reserve Bank of Australia</a></cite></blockquote><blockquote>"The total value of pilot wCBDC issuance over the project was $4.4 million with individual transaction values of up to $250,000 seen in use cases."<cite><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">S9 Reserve Bank of Australia and Digital Finance CRC</a>, p. 13</cite></blockquote></div></div><div class="card fact" id="F16"><div class="ch"><span class="chip">F16</span><h3 style="margin:0">Redbelly was one of three platforms that carried it.</h3><span class="mono kind">About Redbelly</span></div><div class="cb"><p class="muted">The RBA final report names three platforms used with pilot wCBDC: AP+ HashSphere, Canvas Connect and Redbelly Network.</p><blockquote>"Use cases used three of the short-listed ... platforms for their experimentation with pilot wCBDC: Australian Payments Plus&#x27;s (AP+) HashSphere instance ..., Canvas Connect ..., and Redbelly Network ..."<cite><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">S9 Reserve Bank of Australia and Digital Finance CRC</a>, p. 13</cite></blockquote></div></div></div>
+  <div class="card" style="margin-top:24px"><div class="ch"><h3 style="margin:0">Sources</h3></div><div class="cb"><ol class="src"><li><a href="https://redbelly.network">Redbelly Network, Home page</a> <span class="mono">(S1)</span></li><li><a href="https://redbelly.network/asset-tokenisation">Redbelly Network, Asset Tokenisation</a> <span class="mono">(S2)</span></li><li><a href="https://redbelly.network/projectacacia">Redbelly Network, Project Acacia</a> <span class="mono">(S3)</span></li><li><a href="https://tokeniser.com/technology">Tokeniser (a Redbelly Network project), Our Technology</a> <span class="mono">(S4)</span></li><li><a href="https://tokeniser.com/product/superpowers/instant-settlement">Tokeniser (a Redbelly Network project), Instant settlement</a> <span class="mono">(S5)</span></li><li><a href="https://tokeniser.com/product/superpowers/automated-compliance">Tokeniser (a Redbelly Network project), Automated compliance</a> <span class="mono">(S6)</span></li><li><a href="https://tokeniser.com/about">Tokeniser (a Redbelly Network project), About Us</a> <span class="mono">(S7)</span></li><li><a href="https://redbelly.network/blog/tokenised-asset-backed-security-transaction-pilot-launches-under-Project-Acacia">Redbelly Network blog, Tokenised asset-backed security transaction pilot launches under Project Acacia (11 December 2025)</a> <span class="mono">(S8)</span></li><li><a href="https://www.rba.gov.au/payments-and-infrastructure/tokenised-money/pdf/project-acacia-final-report.pdf">Reserve Bank of Australia and Digital Finance CRC, Project Acacia: Exploring the Role of Digital Money in Wholesale Tokenised Asset Markets, Final Report (May 2026)</a> <span class="mono">(S9)</span></li><li><a href="https://www.rba.gov.au/media-releases/2026/mr-26-13.html">Reserve Bank of Australia, Media Release 2026-13: RBA and DFCRC Release Findings From Project Acacia (18 May 2026)</a> <span class="mono">(S10)</span></li><li><a href="https://redbelly.network/about-us">Redbelly Network, About Us (Redbelly journey timeline)</a> <span class="mono">(S11)</span></li><li><a href="https://redbelly.network/blog/what-sets-redbelly-network-apart">Redbelly Network blog, What Sets Redbelly Network Apart (30 October 2024)</a> <span class="mono">(S12)</span></li></ol></div></div>
+</div></section>
+
+<section id="checks"><div class="wrap">
+  <div class="head"><div class="caps">Checks</div><h2>The brief, point by point</h2>
+  <p>85 of 85 automated checks pass. The checker lives in <code>src/checks/verify.py</code> and its last report is in <code>submission/verification-report.md</code>.</p></div>
+  <div class="grid3"><div class="card"><div class="ch"><span class="status"><i></i>Met</span></div><div class="cb"><h3>Someone with no crypto knowledge understands it after one watch</h3><p class="muted">One everyday comparison opens the video: a photo arrives in a second, a fund takes two business days. Everything after that answers why. The ID-at-a-bank comparison carries the identity idea. The video uses none of the usual jargon, and the checker scans for it: no crypto, token, wallet, node or consensus.</p></div></div><div class="card"><div class="ch"><span class="status"><i></i>Met</span></div><div class="cb"><h3>Original, memorable and easy to share</h3><p class="muted">The whole explanation lands on three short ideas that the close repeats: verified people, rules built in, done in one step. Captions are burned in for sound-off viewing on X. The music, sound and animation were all made for this entry.</p></div></div><div class="card"><div class="ch"><span class="status"><i></i>Met</span></div><div class="cb"><h3>Every fact about Redbelly is correct</h3><p class="muted">Every statement about Redbelly maps to a fact in the fact sheet, and every fact carries a quote from Redbelly&#x27;s own material or from the Reserve Bank of Australia. The checker re-fetches each source and confirms each quote is still on the page.</p></div></div></div>
+  <div class="tablebox" style="margin-top:24px"><table><thead><tr><th>Failure criterion</th><th>Status</th><th>How it is avoided</th></tr></thead><tbody><tr><td>The banned word or a stand-in appears anywhere</td><td><span class="status"><i></i>Clear</span></td><td>Scanned in the narration, the captions, every piece of on-screen text, this site, the PDF and every file in the repository. The usual stand-ins and abbreviations are checked as well.</td></tr><tr><td>Any factual error about Redbelly</td><td><span class="status"><i></i>Clear</span></td><td>16 facts, each tied to quotes from public Redbelly, Tokeniser and Reserve Bank of Australia material, last verified on the date below.</td></tr><tr><td>Entry posted publicly before judging</td><td><span class="status"><i></i>Clear</span></td><td>The video has not been posted on X or any other channel. The DAO posts the winner.</td></tr><tr><td>Price talk, investment advice or promises of returns</td><td><span class="status"><i></i>Clear</span></td><td>None. The script never mentions a token, a price, a yield or a return, and the checker scans for them.</td></tr><tr><td>Unlicensed music, images or footage</td><td><span class="status"><i></i>Clear</span></td><td>No stock media at all. Music and sound are synthesised in code, the animation is drawn in code, and fonts, icons and logos are used under the licences listed in CREDITS.md.</td></tr><tr><td>AI generated text submitted without checking</td><td><span class="status"><i></i>Clear</span></td><td>Every line was checked against the sources in the fact sheet. The final audio is transcribed and compared word for word with the script, so the voice cannot add or change a word.</td></tr><tr><td>Personal credit inside the deliverable</td><td><span class="status"><i></i>Clear</span></td><td>No names, handles, signatures, watermarks or made-by lines in the video, the captions, the site or the PDF.</td></tr></tbody></table></div>
+</div></section>
+
+<section id="made"><div class="wrap">
+  <div class="head"><div class="caps">Production</div><h2>How it was made</h2>
+  <p>Everything is built from source in this repository, so every frame and every sound can be rebuilt and inspected. Licences for the fonts, icons and logos are in <code>CREDITS.md</code>.</p></div>
+  <div class="tablebox"><table><tbody><tr><td style="font-weight:600;white-space:nowrap">Script</td><td>21 lines in src/script.json, each tagged with the facts it relies on. Written to be read aloud: one idea per sentence.</td></tr><tr><td style="font-weight:600;white-space:nowrap">Voice</td><td>Chatterbox Turbo, an open-weights voice model under the MIT licence, with its built-in voice. Four takes of every line. Each take is transcribed with Whisper and only takes that match the script word for word can be chosen. The chosen takes are slowed by 5 percent with Rubber Band, formants preserved, for an easy pace.</td></tr><tr><td style="font-weight:600;white-space:nowrap">Music and sound</td><td>Composed in code in src/audio/music.py: warm pads, a plucked arpeggio, bass and light percussion at 96 BPM. The groove lands on the Redbelly reveal. Sound effects are synthesised the same way. The music ducks under the voice and the mix is mastered to -14 LUFS.</td></tr><tr><td style="font-weight:600;white-space:nowrap">Picture</td><td>Eight HTML and SVG scenes in the DAO Task Board palette and type. Each frame is a pure function of time, rendered in Chromium at 1920 x 1080 and 60 frames per second, then encoded with x264.</td></tr><tr><td style="font-weight:600;white-space:nowrap">Timing</td><td>Every animation and sound effect is anchored to a spoken word, using Whisper word timings, so the picture moves when the voice says the word.</td></tr></tbody></table></div>
+  <pre>bash src/build.sh          # timeline, music, mix, picture, encode, captions, site, PDF, checks
+python src/checks/verify.py --online --asr   # re-check sources and the spoken words</pre>
+</div></section>
+
+<section id="files" style="border-bottom:0"><div class="wrap">
+  <div class="head"><div class="caps">Files</div><h2>Deliverables</h2></div>
+  <div class="tablebox files"><table><tbody><tr><td><a href="../submission/redbelly-in-simple-terms.mp4">redbelly-in-simple-terms.mp4</a></td><td>The entry. 1920 x 1080, H.264 and AAC, captions burned in</td></tr><tr><td><a href="../submission/redbelly-in-simple-terms.srt">redbelly-in-simple-terms.srt</a></td><td>Captions as a separate file (SubRip)</td></tr><tr><td><a href="../submission/redbelly-in-simple-terms.vtt">redbelly-in-simple-terms.vtt</a></td><td>Captions as a separate file (WebVTT)</td></tr><tr><td><a href="../submission/redbelly-in-simple-terms-submission.pdf">redbelly-in-simple-terms-submission.pdf</a></td><td>Submission document: script, storyboard, facts, sources and checks</td></tr><tr><td><a href="../submission/sources.md">sources.md</a></td><td>The source list with every quote</td></tr><tr><td><a href="../submission/transcript.txt">transcript.txt</a></td><td>The narration as plain text</td></tr><tr><td><a href="../submission/verification-report.md">verification-report.md</a></td><td>Output of the automated checks</td></tr></tbody></table></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Facts last verified 30 October 2026.</span><span>Built to the Redbelly DAO Task Board brand kit.</span></div></footer>
+<script>
+document.getElementById("theme").addEventListener("click",()=>{
+  const r=document.documentElement;const dark=r.dataset.theme?r.dataset.theme==="dark":!matchMedia("(prefers-color-scheme: light)").matches;
+  r.dataset.theme=dark?"light":"dark";try{localStorage.setItem("theme",r.dataset.theme)}catch(e){}
+});
+</script>
+</body>
+</html>
